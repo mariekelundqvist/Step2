@@ -1102,15 +1102,13 @@ THEN
 ELSE NULL
 
 END AS ESTIMATION_CONSUMER_LOAN
-
-/*BOLÅN ESTIMATED TOTAL*/
-
-
-,CASE 
+, 
+/*BOLÃ&N ESTIMATED TOTAL*/
+CASE 
 -- CASE 1
 WHEN  AGE_GROUPING_CL=1 AND H_region='Glesbygd'
 THEN 
-EXP(11.26394
+11.26394
 +ln_CL*(0.01342)
 +Balance_Blanco_loans*(-0.25271)
 +NbrOf_co_Mortgageholders*(0.06550)
@@ -1137,11 +1135,20 @@ EXP(11.26394
 +CapitalIncomeFactor*(0.01704)
 +MaritalStatusFactor*(0.00151)
 +EconomyFactor*(0.01682)
-)
+
+
+/*ELSE NULL
+END AS Estimation_Mortgage
+
+FROM LabGBIDT.Temp_Geo_SoW_Variables
+*/
+
+
+
 -- CASE 2
 WHEN  AGE_GROUPING_CL=2 AND H_region='Glesbygd'
 THEN 
-EXP(13.03707
+13.03707
 +ln_CL*(0.02568)
 +Balance_Blanco_loans*(-0.29630)
 +NbrOf_co_Mortgageholders*(0.04179)
@@ -1168,11 +1175,11 @@ EXP(13.03707
 +CapitalIncomeFactor*(0.02187)
 +MaritalStatusFactor*(-0.00397)
 +EconomyFactor*(0.01308)
-)
+
 -- CASE 3
 WHEN  AGE_GROUPING_CL=3 AND H_region='Glesbygd'
 THEN 
-EXP(14.03564
+14.03564
 +ln_CL*(0.05931)
 +Balance_Blanco_loans*(-0.51100)
 +NbrOf_co_Mortgageholders*(0.02795)
@@ -1199,11 +1206,11 @@ EXP(14.03564
 +CapitalIncomeFactor*(0.01789)
 +MaritalStatusFactor*(-0.00538)
 +EconomyFactor*(-0.00071)
-)
+
 -- CASE 4
 WHEN  AGE_GROUPING_CL=1 AND H_region='Göteborg'
 THEN 
-EXP(11.39125
+11.39125
 +ln_CL*(0.01415)
 +Balance_Blanco_loans*(-0.15337)
 +NbrOf_co_Mortgageholders*(0.02733)
@@ -1230,11 +1237,11 @@ EXP(11.39125
 +CapitalIncomeFactor*(0.00621)
 +MaritalStatusFactor*(0.00905)
 +EconomyFactor*(0.03179)
-)
+
 -- CASE 5
 WHEN  AGE_GROUPING_CL=2 AND H_region='Göteborg'
 THEN 
-EXP(13.39971
+13.39971
 +ln_CL*(0.02580)
 +Balance_Blanco_loans*(-0.12713)
 +NbrOf_co_Mortgageholders*(0.04732)
@@ -1262,11 +1269,10 @@ EXP(13.39971
 +MaritalStatusFactor*(-0.00361)
 +EconomyFactor*(0.04655)
 
-)
 -- CASE 6
 WHEN  AGE_GROUPING_CL=3 AND H_region='Göteborg'
 THEN 
-EXP(15.97990
+15.97990
 +ln_CL*(0.04947)
 +Balance_Blanco_loans*(-0.23293)
 +NbrOf_co_Mortgageholders*(0.07003)
@@ -1293,11 +1299,11 @@ EXP(15.97990
 +CapitalIncomeFactor*(0.00646)
 +MaritalStatusFactor*(-0.00459)
 +EconomyFactor*(0.02757)
-)
+
 -- CASE 7
 WHEN  AGE_GROUPING_CL=1 AND H_region='Malmö'
 THEN 
-EXP(9.74108
+9.74108
 +ln_CL*(0.01183)
 +Balance_Blanco_loans*(-0.07333)
 +NbrOf_co_Mortgageholders*(0.01802)
@@ -1325,11 +1331,10 @@ EXP(9.74108
 +MaritalStatusFactor*(0.00897)
 +EconomyFactor*(0.02943)
 
-)
 -- CASE 8
 WHEN  AGE_GROUPING_CL=2 AND H_region='Malmö'
 THEN 
-EXP(13.27137
+13.27137
 +ln_CL*(0.02922)
 +Balance_Blanco_loans*(-0.15881)
 +NbrOf_co_Mortgageholders*(0.03015)
@@ -1357,11 +1362,10 @@ EXP(13.27137
 +MaritalStatusFactor*(0.00453)
 +EconomyFactor*(0.03969)
 
-)
 -- CASE 9
 WHEN  AGE_GROUPING_CL=3 AND H_region='Malmö'
 THEN 
-EXP(16.57185
+16.57185
 +ln_CL*(0.05195)
 +Balance_Blanco_loans*(-0.28048)
 +NbrOf_co_Mortgageholders*(0.06674)
@@ -1388,11 +1392,11 @@ EXP(16.57185
 +CapitalIncomeFactor*(0.00884)
 +MaritalStatusFactor*(-0.01105)
 +EconomyFactor*(0.01625)
-)
+
 -- CASE 10
 WHEN  AGE_GROUPING_CL=1 AND H_region='Mellanbygd'
 THEN 
-EXP(10.44998
+10.44998
 +ln_CL*(0.01177)
 +Balance_Blanco_loans*(-0.18613)
 +NbrOf_co_Mortgageholders*(0.04846)
@@ -1419,11 +1423,11 @@ EXP(10.44998
 +CapitalIncomeFactor*(0.00872)
 +MaritalStatusFactor*(0.01380)
 +EconomyFactor*(0.02218)
-)
+
 -- CASE 11
 WHEN  AGE_GROUPING_CL=2 AND H_region='Mellanbygd'
 THEN 
-EXP(13.46741
+13.46741
 +ln_CL*(0.03396)
 +Balance_Blanco_loans*(-0.30492)
 +NbrOf_co_Mortgageholders*(0.03664)
@@ -1450,11 +1454,11 @@ EXP(13.46741
 +CapitalIncomeFactor*(0.01428)
 +MaritalStatusFactor*(-0.00020)
 +EconomyFactor*(0.02122)
-)
+
 -- CASE 12
 WHEN  AGE_GROUPING_CL=3 AND H_region='Mellanbygd'
 THEN 
-EXP(13.99883
+13.99883
 +ln_CL*(0.08149)
 +Balance_Blanco_loans*(-0.65578)
 +NbrOf_co_Mortgageholders*(0.02928)
@@ -1481,13 +1485,11 @@ EXP(13.99883
 +CapitalIncomeFactor*(0.01755)
 +MaritalStatusFactor*(-0.00804)
 +EconomyFactor*(-0.00326)
-)
-
 
 -- CASE 13
 WHEN  AGE_GROUPING_CL=1 AND H_region='Stockholm'
 THEN 
-EXP(11.31138
+11.31138
 +ln_CL*(0.00977)
 +Balance_Blanco_loans*(-0.09785)
 +NbrOf_co_Mortgageholders*(0.01403)
@@ -1515,11 +1517,10 @@ EXP(11.31138
 +MaritalStatusFactor*(0.01245)
 +EconomyFactor*(0.02478)
 
-)
 -- CASE 14
 WHEN  AGE_GROUPING_CL=2 AND H_region='Stockholm'
 THEN 
-EXP(13.19307
+13.19307
 +ln_CL*(0.01154)
 +Balance_Blanco_loans*(-0.00208)
 +NbrOf_co_Mortgageholders*(0.03669)
@@ -1546,11 +1547,11 @@ EXP(13.19307
 +CapitalIncomeFactor*(0.01114)
 +MaritalStatusFactor*(0.00275)
 +EconomyFactor*(0.03875)
-)
+
 -- CASE 15
 WHEN  AGE_GROUPING_CL=3 AND H_region='Stockholm'
 THEN 
-EXP(15.82935
+15.82935
 +ln_CL*(0.04786)
 +Balance_Blanco_loans*(-0.19981)
 +NbrOf_co_Mortgageholders*(0.06300)
@@ -1577,13 +1578,11 @@ EXP(15.82935
 +CapitalIncomeFactor*(0.00954)
 +MaritalStatusFactor*(-0.00816)
 +EconomyFactor*(0.03352)
-)
-
 
 -- CASE 16
 WHEN  AGE_GROUPING_CL=1 AND H_region='Större_städer'
 THEN 
-EXP(10.68069
+10.68069
 +ln_CL*(0.01035)
 +Balance_Blanco_loans*(-0.17663)
 +NbrOf_co_Mortgageholders*(0.04264)
@@ -1610,11 +1609,10 @@ EXP(10.68069
 +CapitalIncomeFactor*(0.00785)
 +MaritalStatusFactor*(0.01660)
 +EconomyFactor*(0.02960)
-)
 -- CASE 17
 WHEN  AGE_GROUPING_CL=2 AND H_region='Större_städer'
 THEN 
-EXP(13.21102
+13.21102
 +ln_CL*(0.02122)
 +Balance_Blanco_loans*(-0.16085)
 +NbrOf_co_Mortgageholders*(0.04727)
@@ -1641,11 +1639,11 @@ EXP(13.21102
 +CapitalIncomeFactor*(0.01129)
 +MaritalStatusFactor*(0.00210)
 +EconomyFactor*(0.03452)
-)
+
 -- CASE 18
 WHEN  AGE_GROUPING_CL=3 AND H_region='Större_städer'
 THEN 
-EXP(16.09102
+16.09102
 +ln_CL*(0.07356)
 +Balance_Blanco_loans*(-0.50513)
 +NbrOf_co_Mortgageholders*(0.06235)
@@ -1672,13 +1670,11 @@ EXP(16.09102
 +CapitalIncomeFactor*(0.01182)
 +MaritalStatusFactor*(-0.00407)
 +EconomyFactor*(0.01664)
-)
-
 
 -- CASE 19
 WHEN  AGE_GROUPING_CL=1 AND H_region='Tätbygd'
 THEN 
-EXP(10.56482
+10.56482
 +ln_CL*(0.00355)
 +Balance_Blanco_loans*(-0.13872)
 +NbrOf_co_Mortgageholders*(0.06478)
@@ -1705,11 +1701,11 @@ EXP(10.56482
 +CapitalIncomeFactor*(0.01077)
 +MaritalStatusFactor*(0.00759)
 +EconomyFactor*(0.01317)
-)
+
 -- CASE 20
 WHEN  AGE_GROUPING_CL=2 AND H_region='Tätbygd'
 THEN 
-EXP(13.25927
+13.25927
 +ln_CL*(0.01289)
 +Balance_Blanco_loans*(-0.13837)
 +NbrOf_co_Mortgageholders*(0.06313)
@@ -1736,11 +1732,11 @@ EXP(13.25927
 +CapitalIncomeFactor*(0.01489)
 +MaritalStatusFactor*(-0.00550)
 +EconomyFactor*(0.01602)
-)
+
 -- CASE 21
 WHEN  AGE_GROUPING_CL=3 AND H_region='Tätbygd'
 THEN 
-EXP(15.29686
+15.29686
 +ln_CL*(0.05346)
 +Balance_Blanco_loans*(-0.44900)
 +NbrOf_co_Mortgageholders*(0.06085)
@@ -1767,6 +1763,5 @@ EXP(15.29686
 +CapitalIncomeFactor*(0.02412)
 +MaritalStatusFactor*(-0.00643)
 +EconomyFactor*(0.00363)
-)
 ELSE NULL
-END AS ESTIMATION_BOLAN
+END AS Estimation_Mortgage
